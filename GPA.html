@@ -4,43 +4,30 @@
             <title>GPA CALCULATor</title>
             <table align = "center" width = "800">
                 <tr>
-                    <th> <input type="button" value="Home" > </th>
+                    <th><a href ="personal.html"> <input type="button" value="Home" ></a></th>
                     <th><a href ="gallery.html"><input type="button" value="Gallery" ></a> </th>
                     <th><a href ="contact.html"><input type="button" value="Contact" ></a> </th>
                     <th><a href ="GPA.html"><input type="button" value="GPA" ></a> </th>
                 </tr>
             </table>
 
-            <script>
-                    document.addEventListener('DOMContentLoaded',function(){
-                  document.querySelector('form').onsubmit = function(){ 
-                  const list = document.createElement('td')
-                  const G = document.createElement('td')
-                  const space = document.createElement('tr')
-                  list.innerHTML = document.querySelector('#ClassName').value
-                  G.innerHTML = document.querySelector('#GradeJA').value
-                  console.log(document.querySelector('#ClassName'))
-                  const tasks = document.querySelector('#courses')
-            tasks.append(list)
-            tasks.append(G)
-            tasks.append(space)
-            return false
-
-        }
-    })
-            </script>
+            <script src="GPA.js"></script>
 
         </head>
 
         <body>
             <fieldset>
-                <legend>GPA CALCULATOR</legend>
+                <legend><h1>GPA CALCULATOR</h1></legend>
                 <table id="courses" border="1px" style="padding:5px; border:1px;"></table>
-                <form>
-                    <input type="text" placeholder="input Class" id="ClassName">
-                    <input type="number" placeholder="input Grade" id="GradeJa">
+                <form id="inputform">
+                    <input type="number" placeholder="Input Class's Code" id="ClassName">
+                    <input type="number" placeholder="term and years" id="term">
+                    <input type="number" placeholder="Input Grade" id="GradeJa">
                     <input type="submit">
                 </form>
+
+                <input type="button" value="calculate" id="calculate">
+                <table id = "resultja"></table>
             </fieldset>
 
         </body>
