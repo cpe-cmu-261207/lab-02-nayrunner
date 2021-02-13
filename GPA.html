@@ -12,26 +12,197 @@
             </table>
 
             <script src="GPA.js"></script>
-
         </head>
 
-        <body>
-            <fieldset>
-                <legend><h1>GPA CALCULATOR</h1></legend>
-                <table id="courses" border="1px" style="padding:5px; border:1px;"></table>
-                <form id="inputform">
-                    <input type="number" placeholder="Input Class's Code" id="ClassName">
-                    <input type="number" placeholder="term and years" id="term">
-                    <input type="number" placeholder="Input Grade" id="GradeJa">
-                    <input type="submit">
-                </form>
+        <br><br>
+        <form action="#" id="form">
+            <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+                <tbody>
+                    <tr>
+                        <tr>
+                            <td>
+                                <h4>
+                                    <label><san style="padding: 20px;">วิชา:</san></label>
+                                </h4>
+                            </td>
+                            <td>
+                                <input size="50%" id="subject" type="text" name="subject" value width="50px" placeholder="ใส่ชือวิชา" style="padding: 10px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>
+                                    <label><san style="padding: 20px;">รหัสวิชา:</san></label>
+                                </h4>
+                            </td>
+                            <td>
+                                <input size="50%" id="code-subject" type="text"  name="code-subject" value width="50px" placeholder="ใส่รหัสวิชา" style="padding: 10px;" ></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>
+                                    <label><san style="padding: 20px;">ภาคเรียน:</san></label>
+                                </h4>
+                            </td>
+                            <td>
+                                <form >
+                                    <input id="term1" type="radio" name="term" value="term1">
+                                    <label for="term1"><san>ภาคเรียนที่ 1</san></label>
+                                    <input id="term2" type="radio" name="term" value="term2">
+                                    <label for="term2"><san>ภาคเรียนที่ 2</san></label>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>
+                                    <label><san style="padding: 20px;">เกรดที่ได้รับ:</san></label>
+                                </h4>
+                            </td>
+                            <td>
+                                <select name ="gpa" id = "gpa" itemref="gpa" >
+                                    <optgroup label="GPA">
+                                        <option value="A" >A</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </optgroup><br>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td style="padding: 30px;" >
+                                <submit><input width="80%" type="submit" name="submit" value="submit"  style="color: black;"></submit>
+                            </td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table><br>
+        </form>
+        
 
-                <input type="button" value="calculate" id="calculate">
-                <table id = "resultja"></table>
-            </fieldset>
+        <br>
+    <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+        <thead>
+            <tr>
+                <td>
+                    <center>
+                        <h2><san style="color: black; border: black;">ภาคเรียนที่ 1</san></h2>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="80%" align="center" style="background-color: transparent;">
+                        <thead>
+                            <tr>
+                                <tr>
+                                    <td width="50%">
+                                        <h3><san style="color: black;">ชื่อวิชา</san></h3>
+                                    </td>
+                                    <td width="25%">
+                                        <h3><san style="color: black;">รหัสวิชา</san></h3>
+                                    </td>
+                                    <td width="15%">
+                                        <h3><san style="color: black;">เกรดที่ได้รับ</san></h3>
+                                    </td>
+                                </tr>
+                            </tr>
+                        </thead>
+                        <tbody id="showtable">
+                            
+                        </tbody>
+                        
+                    </table>
+                </td>
+            </tr>
+        </thead> 
+    </table><br><br>
+    <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+        <tbody>
+            <tr>
+                <td width="20%">
+                    <h4><san style="color: black; border: black;">เกรดเฉลี่ยภาคเรียนที่ 1 : </san></san></h4>
+                </td>
+                <td id="td_grade_1" style="color: black;">
+                    
+                </td>
+            </tr>
+        </tbody>  
+    </table>
+    <br><br>
 
-        </body>
+
+    <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+        <thead>
+          <tr>
+              <td>
+                  <center>
+                      <h2><san style="color: black; border: black;">ภาคเรียนที่ 2 </san></h2>
+                  </center>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <table width="80%" align="center" style="background-color: transparent;">
+                      <thead>
+                          <tr>
+                              <tr>
+                                  <td width="50%">
+                                      <h3><san style="color: black;">ชื่อวิชา</san></h3>
+                                  </td>
+                                  <td width="25%">
+                                      <h3><san style="color: black;">รหัสวิชา</san></h3>
+                                  </td>
+                                  <td width="15%">
+                                      <h3><san style="color: black;">เกรดที่ได้รับ</san></h3>
+                                  </td>
+                              </tr>
+                          </tr>
+                      </thead>
+                      <tbody id="showtable_2">
+                          
+                      </tbody>
+                  </table>
+              </td>
+          </tr>
+      </thead>
+    </table><br><br>
+    <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+      <tbody>
+          <tr>
+              <td width="20%">
+                  <h4><san style="color: black; border: black;">เกรดเฉลี่ยภาคเรียนที่ 2 : </san></san></h4>
+              </td>
+              <td id="td_grade_2" style="color: black;">
+                  
+              </td>
+          </tr>
+      </tbody>  
+  </table>
+  <br><br>
+
+  <table width="80%" align="center" style="padding: 15px;  border:2px solid; ">
+    <thead>
+        <tr>
+            <td width="40%">
+                <h4><san style="color: black; border: black;">เกรดเฉลี่ยรวมวิชาเมเจอร์ (261xxx/269xxx) :</san></h4>
+            </td>
+            <td id="261_grade" style="color: black;">
+               
+            </td>
+        </tr>
+  </thead>
+</table>
+  <br>
+
     </html>
-
-
+    <script src="GPA.js"></script>
 </DOCTYPE>
